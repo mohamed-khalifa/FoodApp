@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_16dp">
+
+        <View
+            android:id="@+id/circleBackgroundView"
+            android:layout_width="@dimen/dimen_270dp"
+            android:layout_height="@dimen/dimen_270dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@drawable/circle_background"
+            app:layout_constraintBottom_toTopOf="@+id/cardView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toTopOf="@+id/caloriesTextView"
+            app:layout_constraintEnd_toEndOf="@id/titleEndGuideline"
+            app:layout_constraintStart_toStartOf="@id/titleStartGuideline"
+            app:layout_constraintTop_toTopOf="@id/circleBackgroundView"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/caloriesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            app:layout_constraintBottom_toTopOf="@+id/caloriesPerServingTextView"
+            app:layout_constraintEnd_toEndOf="@id/circleBackgroundView"
+            app:layout_constraintStart_toStartOf="@id/circleBackgroundView"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+        <TextView
+            android:id="@+id/caloriesPerServingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calories_per_serving"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:layout_constraintBottom_toBottomOf="@+id/circleBackgroundView"
+            app:layout_constraintEnd_toEndOf="@id/circleBackgroundView"
+            app:layout_constraintStart_toStartOf="@id/circleBackgroundView"
+            app:layout_constraintTop_toBottomOf="@+id/caloriesTextView" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_16dp"
+            app:cardElevation="@dimen/dimen_8dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/circleBackgroundView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dimen_8dp">
+
+                <TextView
+                    android:id="@+id/carbsCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    app:layout_constraintEnd_toStartOf="@+id/proteinCountTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/carbsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="@string/carbs"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    app:layout_constraintEnd_toEndOf="@id/carbsCountTextView"
+                    app:layout_constraintStart_toStartOf="@id/carbsCountTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/carbsCountTextView" />
+
+                <TextView
+                    android:id="@+id/proteinCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    app:layout_constraintEnd_toStartOf="@+id/fatCountTextView"
+                    app:layout_constraintStart_toEndOf="@+id/carbsCountTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/proteinTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="@string/protein"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    app:layout_constraintEnd_toEndOf="@id/proteinCountTextView"
+                    app:layout_constraintStart_toStartOf="@id/proteinCountTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/proteinCountTextView" />
+
+                <TextView
+                    android:id="@+id/fatCountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/placeholder"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/proteinCountTextView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fatTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="@string/fat"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    app:layout_constraintEnd_toEndOf="@+id/fatCountTextView"
+                    app:layout_constraintStart_toStartOf="@+id/fatCountTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/fatCountTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/carbsHeaderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:text="@string/carbs"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/fiberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:text="@string/fiber"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintStart_toStartOf="@+id/carbsHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/carbsHeaderTextView" />
+
+        <TextView
+            android:id="@+id/fiberCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/carbsHeaderTextView" />
+
+        <TextView
+            android:id="@+id/sugarsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:text="@string/sugars"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintStart_toStartOf="@+id/carbsHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/fiberTextView" />
+
+        <TextView
+            android:id="@+id/sugarsCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fiberTextView" />
+
+        <TextView
+            android:id="@+id/fatHeaderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:text="@string/fat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sugarsCountTextView" />
+
+        <TextView
+            android:id="@+id/saturatedFatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:text="@string/saturated_fat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintStart_toStartOf="@+id/fatHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/fatHeaderTextView" />
+
+        <TextView
+            android:id="@+id/saturatedFatCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fatHeaderTextView" />
+
+        <TextView
+            android:id="@+id/unSaturatedFatTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:text="@string/unsaturated_fat"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintStart_toStartOf="@+id/fatHeaderTextView"
+            app:layout_constraintTop_toBottomOf="@+id/saturatedFatTextView" />
+
+        <TextView
+            android:id="@+id/unSaturatedFatCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/material_on_surface_emphasis_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/saturatedFatTextView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/titleStartGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/titleEndGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".80" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
