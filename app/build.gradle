@@ -1,0 +1,60 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk Versions.COMPILE_SDK_VERSION
+
+    defaultConfig {
+        applicationId "com.khalifa.foodapp"
+        minSdkVersion Versions.MIN_SDK
+        targetSdkVersion Versions.TARGET_SDK
+        versionCode Releases.VERSION_CODE
+        versionName Releases.VERSION_NAME
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation Libs.KOTLIN
+    implementation Libs.COROUTINES
+    implementation Libs.HILT_ANDROID
+    kapt Libs.HILT_COMPILER
+    implementation Libs.CORE_KTX
+    implementation Libs.RETROFIT
+    implementation Libs.RETROFIT_GSON_CONVERTOR
+    implementation Libs.VIEW_MODEL
+    implementation Libs.LIFECYCLE_RUNTIME_KTX
+    implementation Libs.APPCOMPAT
+    implementation Libs.CONSTRAINT_LAYOUT
+    implementation Libs.MATERIAL
+    implementation Libs.FRAGMENT_KTX
+    implementation Libs.NAVIGATION_CORE
+    implementation Libs.NAVIGATION_KTX
+
+    testImplementation Libs.JUNIT
+    testImplementation Libs.MOCKK
+    testImplementation Libs.COROUTINES_TEST
+    testImplementation Libs.ARCH_CORE_TESTING
+    androidTestImplementation Libs.ANDROIDX_TEST
+}
